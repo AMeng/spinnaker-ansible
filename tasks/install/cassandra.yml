@@ -1,12 +1,4 @@
 ---
-- name: Add cassandra apt key
-  apt_key: url="http://debian.datastax.com/debian/repo_key"
-  notify: update apt
-
-- name: Add cassandra apt repository
-  apt_repository: repo="deb http://debian.datastax.com/community/ stable main"
-  notify: update apt
-
 - name: Install cassandra
   apt: name="cassandra={{ spinnaker_cassandra_version }}"
 

@@ -8,6 +8,3 @@
 
 - name: restart redis
   service: name=redis-server state=restarted
-
-- name: update apt
-  apt: update_cache=yes

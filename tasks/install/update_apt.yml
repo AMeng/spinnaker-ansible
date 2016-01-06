@@ -1,0 +1,34 @@
+---
+- name: Add cassandra apt key
+  apt_key: url="http://debian.datastax.com/debian/repo_key"
+  register: cass_apt_key
+  when: spinnaker_install and spinnaker_cassandra_local
+
+- name: Add cassandra apt repository
+  apt_repository: repo="deb http://debian.datastax.com/community/ stable main"
+  register: cass_apt_repo
+  when: spinnaker_install and spinnaker_cassandra_local
+
+- name: Add redis apt repository
+  apt_repository: repo="ppa:chris-lea/redis-server"
+  register: redis_apt_repo
+  when: spinnaker_install and spinnaker_redis_local
+
+- name: Add java apt repository
+  apt_repository: repo="ppa:openjdk-r/ppa"
+  register: java_apt_repo
+  when: spinnaker_install
+
+- name: Add spinnaker apt key
+  apt_key: url="https://bintray.com/user/downloadSubjectPublicKey?username=spinnaker"
+  register: spinnaker_apt_key
+  when: spinnaker_install
+
+- name: Add spinnaker apt repository
+  apt_repository: repo="deb https://dl.bintray.com/spinnaker/debians trusty spinnaker"
+  register: spinnaker_apt_repo
+  when: spinnaker_install
+
+- name: update apt
+  apt: update_cache=yes
+  when: cass_apt_key.changed or cass_apt_repo.changed or redis_apt_repo.changed or java_apt_repo.changed or spinnaker_apt_key.changed or spinnaker_apt_repo.changed
