@@ -1,0 +1,10 @@
+---
+galaxy_info:
+  author: Alex Meng
+  description: An ansible role for installing Spinnaker
+  license: MIT
+  min_ansible_version: 1.9
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
