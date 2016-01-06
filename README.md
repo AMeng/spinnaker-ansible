@@ -3,6 +3,13 @@ Spinnaker
 
 An ansible role for installing [Spinnaker](http://spinnaker.io).
 
+Installation
+------------
+
+```
+ansible-galaxy install AMeng.spinnaker
+```
+
 Role Variables
 --------------
 
