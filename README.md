@@ -1,7 +1,7 @@
 Spinnaker
 =========
 
-An ansible role for installing [Spinnaker](http://spinnaker.io).
+An ansible role for installing and configuring [Spinnaker](http://spinnaker.io).
 
 Installation
 ------------
