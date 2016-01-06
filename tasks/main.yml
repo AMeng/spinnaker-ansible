@@ -8,5 +8,8 @@
 - include: install/redis.yml
   when: spinnaker_install and spinnaker_redis_local
 
+- include: install/packer.yml
+  when: spinnaker_install
+
 - include: install/spinnaker.yml
   when: spinnaker_install

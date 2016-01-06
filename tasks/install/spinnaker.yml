@@ -7,19 +7,3 @@
 
 - name: Install spinnaker
   apt: name=spinnaker
-
-- name: Install unzip
-  apt: name=unzip
-
-- name: Check if packer is installed
-  shell: "packer version"
-  changed_when: false
-  register: current_packer_version
-
-- name: Download packer
-  get_url: dest=/tmp url="https://releases.hashicorp.com/packer/{{ spinnaker_packer_version }}/packer_{{ spinnaker_packer_version }}_linux_amd64.zip"
-  when: "'{{ current_packer_version.stdout }}' != 'Packer v{{ spinnaker_packer_version }}'"
-
-- name: Install packer
-  unarchive: src=/tmp/packer_{{ spinnaker_packer_version }}_linux_amd64.zip dest=/usr/bin copy=no
-  when: "'{{ current_packer_version.stdout }}' != 'Packer v{{ spinnaker_packer_version }}'"
