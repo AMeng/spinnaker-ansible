@@ -1,5 +1,6 @@
 ---
-- include: update_apt.yml
+- include: install/java.yml
+  when: spinnaker_install
 
 - include: install/cassandra.yml
   when: spinnaker_install and spinnaker_cassandra_local

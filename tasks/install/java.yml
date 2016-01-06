@@ -1,0 +1,6 @@
+---
+- name: Add java apt repository
+  apt_repository: repo="ppa:openjdk-r/ppa"
+
+- name: Install Java 8
+  apt: name=openjdk-8-jdk

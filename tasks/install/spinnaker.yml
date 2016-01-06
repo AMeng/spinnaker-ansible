@@ -1,6 +1,12 @@
 ---
-- name: Install Java 8
-  apt: name=openjdk-8-jdk
+- name: Add spinnaker apt key
+  apt_key: url="https://bintray.com/user/downloadSubjectPublicKey?username=spinnaker"
+
+- name: Add spinnaker apt repository
+  apt_repository: repo="deb https://dl.bintray.com/spinnaker/debians trusty spinnaker"
+
+- name: Install spinnaker
+  apt: name=spinnaker
 
 - name: Install unzip
   apt: name=unzip
@@ -10,6 +16,3 @@
 
 - name: Install packer
   unarchive: src=/tmp/packer_{{ spinnaker_packer_version }}_linux_amd64.zip dest=/usr/bin copy=no
-
-- name: Install spinnaker
-  apt: name=spinnaker
