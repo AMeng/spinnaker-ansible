@@ -47,14 +47,14 @@ Example Playbooks
 ```yaml
 - hosts: servers
   roles:
-    - spinnaker
+    - AMeng.spinnaker
 ```
 
 **Basic configuration**:
 ```yaml
 - hosts: servers
   roles:
-    - spinnaker
+    - AMeng.spinnaker
   vars:
     spinnaker_config:
       providers:
@@ -68,7 +68,7 @@ Example Playbooks
 ```yaml
 - hosts: servers
   roles:
-    - spinnaker
+    - AMeng.spinnaker
   vars:
     spinnaker_config:
       providers:
