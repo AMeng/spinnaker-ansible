@@ -1,0 +1,13 @@
+---
+- name: restart spinnaker
+  command: /opt/spinnaker/scripts/reconfigure_spinnaker.sh
+  notify: restart spinnaker step two
+
+- name: restart spinnaker step two
+  service: name=spinnaker state=restarted
+
+- name: restart redis
+  service: name=redis-server state=restarted
+
+- name: update apt
+  apt: update_cache=yes

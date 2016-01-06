@@ -1,0 +1,9 @@
+---
+- include: install/cassandra.yml
+  when: spinnaker_install and spinnaker_cassandra_local
+
+- include: install/redis.yml
+  when: spinnaker_install and spinnaker_redis_local
+
+- include: install/spinnaker.yml
+  when: spinnaker_install

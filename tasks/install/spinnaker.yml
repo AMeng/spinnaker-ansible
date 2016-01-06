@@ -1,0 +1,27 @@
+---
+- name: Add java apt repository
+  apt_repository: repo="ppa:openjdk-r/ppa"
+  notify: update apt
+
+- name: Install Java 8
+  apt: name=openjdk-8-jdk
+
+- name: Install unzip
+  apt: name=unzip
+
+- name: Download packer
+  get_url: dest=/tmp url="https://releases.hashicorp.com/packer/{{ spinnaker_packer_version }}/packer_{{ spinnaker_packer_version }}_linux_amd64.zip"
+
+- name: Install packer
+  unarchive: src=/tmp/packer_{{ spinnaker_packer_version }}_linux_amd64.zip dest=/usr/bin copy=no
+
+- name: Add spinnaker apt key
+  apt_key: url="https://bintray.com/user/downloadSubjectPublicKey?username=spinnaker"
+  notify: update apt
+
+- name: Add spinnaker apt repository
+  apt_repository: repo="deb https://dl.bintray.com/spinnaker/debians trusty spinnaker"
+  notify: update apt
+
+- name: Install spinnaker
+  apt: name=spinnaker

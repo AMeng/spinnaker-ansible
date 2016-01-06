@@ -1,0 +1,6 @@
+---
+spinnaker_install: true
+spinnaker_cassandra_local: true
+spinnaker_cassandra_version: 2.1.11
+spinnaker_redis_local: true
+spinnaker_packer_version: 0.8.6
