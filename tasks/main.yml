@@ -13,3 +13,23 @@
 
 - include: install/spinnaker.yml
   when: spinnaker_install
+
+- name: Copy default spinnaker config if one does not exist
+  command: creates="/opt/spinnaker/config/spinnaker-local.yml" cp /opt/spinnaker/config/default-spinnaker-local.yml /opt/spinnaker/config/spinnaker-local.yml
+
+- name: Configure spinnaker
+  template: src=spinnaker-local.yml dest=/opt/spinnaker/config/spinnaker-local.yml
+  notify: restart spinnaker
+  when: "spinnaker_config is defined"
+
+- name: Configure spinnaker services
+  template: src={{ item }}-local.yml dest=/opt/spinnaker/config/{{ item }}-local.yml
+  notify: restart spinnaker
+  when: "spinnaker_config_{{ item }} is defined"
+  with_items:
+    - clouddriver
+    - echo
+    - gate
+    - igor
+    - orca
+    - rush
