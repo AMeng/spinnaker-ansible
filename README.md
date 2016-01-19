@@ -17,6 +17,11 @@ Role Variables
 
  * `spinnaker_install`: Boolean. Defaults to true. Should spinnaker be
    installed? If using the spinnaker AMI, you probably want to disable this.
+ * `spinnaker_backup`: Boolean. Defaults to false. Should a cron job be added
+   to backup cassandra? Setting this true requires that you define
+   `spinnaker_backup_bucket`.
+ * `spinnaker_backup_bucket`: String. The S3 bucket to store cassandra backups.
+   Include a trailing slash if using folder names.
  * `spinnaker_cassandra_local`: Boolean. Defaults to true. Will cassandra run
    locally?
  * `spinnaker_cassandra_version`: String. Defaults to "2.1.11"
@@ -56,6 +61,8 @@ Example Playbooks
   roles:
     - AMeng.spinnaker
   vars:
+    spinnaker_backup: True
+    spinnaker_backup_bucket: "MyBucket"
     spinnaker_config:
       providers:
         aws:
@@ -70,6 +77,8 @@ Example Playbooks
   roles:
     - AMeng.spinnaker
   vars:
+    spinnaker_backup: True
+    spinnaker_backup_bucket: "MyBucket/MyFolder/"
     spinnaker_config:
       providers:
         aws:
@@ -97,6 +106,13 @@ Example Playbooks
         keyStorePassword: password
         keyStoreAliasName: okta
 ```
+
+Notes
+-----
+
+This playbook is only tested with AWS. While spinnaker supports other clouds,
+this playbook has not been tested with them. Contributions for other providers
+will be gladly accepted.
 
 License
 -------
