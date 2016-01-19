@@ -1,8 +1,10 @@
 ---
-spinnaker_install: true
-spinnaker_cassandra_local: true
+spinnaker_install: True
+spinnaker_backup: False
+spinnaker_backup_bucket: ""
+spinnaker_cassandra_local: True
 spinnaker_cassandra_version: 2.1.11
-spinnaker_redis_local: true
+spinnaker_redis_local: True
 spinnaker_packer_version: 0.8.6
 
 # Override these configuration variables to populate
