@@ -30,6 +30,11 @@ Role Variables
 
 **Configuration:**
 
+* `spinnaker_environment`: Dictionary. Environment variables for the spinnaker
+  process. See example playbooks below or check the Spinnaker
+  [GitHub Repo](https://github.com/spinnaker/spinnaker/blob/master/etc/default/spinnaker)
+  for more examples.
+
 These variables are used to populate Spinnaker's YAML configuration files. See
 the example playbooks below for more information. The YAML under each variable
 will be copied to the following files:
@@ -63,6 +68,8 @@ Example Playbooks
   vars:
     spinnaker_backup: True
     spinnaker_backup_bucket: "MyBucket"
+    spinnaker_environment:
+      spinnaker_aws_enabled: "true"
     spinnaker_config:
       providers:
         aws:
@@ -79,6 +86,12 @@ Example Playbooks
   vars:
     spinnaker_backup: True
     spinnaker_backup_bucket: "MyBucket/MyFolder/"
+    spinnaker_environment:
+      spinnaker_aws_enabled: "true"
+      spinnaker_aws_default_region: us-east-1
+      timezone: America/Denver
+      aws_vpc_id: vpc-12345678
+      aws_subnet_id: subnet-98765432
     spinnaker_config:
       providers:
         aws:
