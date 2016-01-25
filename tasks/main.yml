@@ -22,6 +22,11 @@
   notify: restart spinnaker
   when: "spinnaker_config is defined"
 
+- name: Configure spinnaker environment variables
+  template: src=spinnaker-environment dest=/etc/default/spinnaker
+  notify: restart spinnaker
+  when: "spinnaker_environment is defined"
+
 - name: Configure spinnaker services
   template: src={{ item }}-local.yml dest=/opt/spinnaker/config/{{ item }}-local.yml
   notify: restart spinnaker

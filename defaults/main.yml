@@ -6,14 +6,3 @@ spinnaker_cassandra_local: True
 spinnaker_cassandra_version: 2.1.11
 spinnaker_redis_local: True
 spinnaker_packer_version: 0.8.6
-
-# Override these configuration variables to populate
-# spinnaker's YAML configuration files:
-
-# spinnaker_config
-# spinnaker_config_clouddriver
-# spinnaker_config_echo
-# spinnaker_config_gate
-# spinnaker_config_igor
-# spinnaker_config_orca
-# spinnaker_config_rush
