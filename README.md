@@ -3,6 +3,8 @@ Spinnaker
 
 An ansible role for installing and configuring [Spinnaker](http://spinnaker.io).
 
+[![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-spinnaker-blue.svg)](https://galaxy.ansible.com/AMeng/spinnaker/)
+
 Installation
 ------------
 
@@ -76,6 +78,9 @@ Example Playbooks
           enabled: true
           defaultRegion: us-east-1
           defaultIAMRole: spinnaker
+      services:
+        deck:
+          timezone: America/Denver
 ```
 
 **Advanced configuration**:
@@ -89,7 +94,6 @@ Example Playbooks
     spinnaker_environment:
       spinnaker_aws_enabled: "true"
       spinnaker_aws_default_region: us-east-1
-      timezone: America/Denver
       aws_vpc_id: vpc-12345678
       aws_subnet_id: subnet-98765432
     spinnaker_config:
@@ -98,6 +102,11 @@ Example Playbooks
           enabled: true
           defaultRegion: us-east-1
           defaultIAMRole: spinnaker
+      services:
+        deck:
+          timezone: America/Denver
+        auth:
+          enabled: true
     spinnaker_config_clouddriver:
       aws:
         accounts:
