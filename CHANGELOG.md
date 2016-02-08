@@ -1,3 +1,8 @@
+v1.3.0 (08 February 2016)
+------------------------
+ * No longer attempt to enable thrift in Cassandra
+ * Added tests
+
 v1.2.0 (25 January 2016)
 ------------------------
  * Added ability to edit enviornment variables
