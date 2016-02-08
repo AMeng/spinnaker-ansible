@@ -13,12 +13,3 @@
 
 - name: Wait for cassandra to start
   wait_for: port=7199
-
-- name: Check if thrift is enabled for cassandra
-  shell: nodetool statusthrift
-  changed_when: false
-  register: cassandra_thrift_status
-
-- name: Enable thrift for cassandra
-  shell: nodetool enablethrift
-  when: "cassandra_thrift_status.stdout != 'running'"
