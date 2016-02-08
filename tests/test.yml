@@ -1,0 +1,44 @@
+---
+- hosts: all
+  sudo: True
+  roles:
+    - role: spinnaker-ansible
+    - role: spinnaker-ansible
+      spinnaker_backup: True
+      spinnaker_backup_bucket: "MyBucket/MyFolder/"
+      spinnaker_environment:
+        spinnaker_aws_enabled: "true"
+        spinnaker_aws_default_region: us-east-1
+        aws_vpc_id: vpc-12345678
+        aws_subnet_id: subnet-98765432
+      spinnaker_config:
+        providers:
+          aws:
+            enabled: true
+            defaultRegion: us-east-1
+            defaultIAMRole: spinnaker
+        services:
+          deck:
+            timezone: America/Denver
+          auth:
+            enabled: true
+      spinnaker_config_clouddriver:
+        aws:
+          accounts:
+            - name: production
+              accountId: 111111111111
+              discovery: http://eureka.production.example.com
+            - name: staging
+              accountId: 222222222222
+              discovery: http://eureka.staging.example.com
+      spinnaker_config_gate:
+        saml:
+          enabled: true
+          requireAuthentication: true
+          url: https://example.okta.com/app/spinnaker/xxxxxxxxxxxxxxxxxxxx/sso/saml
+          certificate: /path/to/certificate
+          issuerId: http://www.okta.com/xxxxxxxxxxxxxxxxxxxx
+          keyStore: /path/to/keystore
+          keyStoreType: JKS
+          keyStorePassword: password
+          keyStoreAliasName: okta
