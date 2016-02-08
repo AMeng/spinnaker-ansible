@@ -3,6 +3,7 @@ Spinnaker
 
 An ansible role for installing and configuring [Spinnaker](http://spinnaker.io).
 
+[![Travis Build](https://travis-ci.org/AMeng/spinnaker-ansible.svg?branch=master)](https://travis-ci.org/AMeng/spinnaker-ansible)
 [![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-spinnaker-blue.svg)](https://galaxy.ansible.com/AMeng/spinnaker/)
 
 Installation
@@ -128,6 +129,12 @@ Example Playbooks
         keyStorePassword: password
         keyStoreAliasName: okta
 ```
+
+Supported Versions
+------------------
+
+ * Ansible 1.9.4
+ * Ansible 2.0.0.0
 
 Notes
 -----
