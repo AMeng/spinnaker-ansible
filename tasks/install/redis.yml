@@ -9,7 +9,7 @@
   file: path=/opt/redis state=directory
 
 - name: Copy local redis config file
-  copy: src=../../files/redis.conf dest=/opt/redis/redis.conf
+  copy: src=redis.conf dest=/opt/redis/redis.conf
   notify: restart redis
 
 - name: Point redis to local config file
