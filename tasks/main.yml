@@ -37,7 +37,9 @@
     - gate
     - igor
     - orca
-    - rush
+    - fiat
+    - rosco
+    - front50
 
 - name: Add cron job to backup cassandra
   cron: name="spinnaker cassandra backup" special_time="daily" job='su - root -c "/opt/spinnaker/pylib/spinnaker/import_export.py --cloud aws --bucket {{ spinnaker_backup_bucket }} --mode export"'

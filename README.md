@@ -50,7 +50,9 @@ will be copied to the following files:
 | spinnaker_config_gate        | gate-local.yml        |
 | spinnaker_config_igor        | igor-local.yml        |
 | spinnaker_config_orca        | orca-local.yml        |
-| spinnaker_config_rush        | rush-local.yml        |
+| spinnaker_config_fiat        | fiat-local.yml        |
+| spinnaker_config_rosco       | rosco-local.yml       |
+| spinnaker_config_front50     | front50-local.yml     |
 
 
 Example Playbooks
