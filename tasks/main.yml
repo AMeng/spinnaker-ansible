@@ -1,17 +1,17 @@
 ---
-- include: install/java.yml
+- include: java.yml
   when: spinnaker_install
 
-- include: install/cassandra.yml
+- include: cassandra.yml
   when: spinnaker_install and spinnaker_cassandra_local
 
-- include: install/redis.yml
+- include: redis.yml
   when: spinnaker_install and spinnaker_redis_local
 
-- include: install/packer.yml
+- include: packer.yml
   when: spinnaker_install
 
-- include: install/spinnaker.yml
+- include: spinnaker.yml
   when: spinnaker_install
 
 - name: Copy default spinnaker config if one does not exist
