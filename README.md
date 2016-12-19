@@ -135,8 +135,8 @@ Example Playbooks
 Supported Versions
 ------------------
 
- * Ansible 1.9.4
- * Ansible 2.0.0.0
+ * Ansible 2.0.2.0
+ * Ansible 2.1.3.0
 
 Notes
 -----
