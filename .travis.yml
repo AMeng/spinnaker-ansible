@@ -3,7 +3,6 @@ dist: trusty
 language: python
 python: "2.7"
 env:
-  - ANSIBLE_VERSION=1.9.6
   - ANSIBLE_VERSION=2.0.2.0
 before_install:
   - sudo apt-get update -qq
