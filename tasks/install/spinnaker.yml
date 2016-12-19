@@ -6,4 +6,4 @@
   apt_repository: repo="deb https://dl.bintray.com/spinnaker/debians trusty spinnaker"
 
 - name: Install spinnaker
-  apt: name=spinnaker
+  apt: name=spinnaker update_cache=yes
