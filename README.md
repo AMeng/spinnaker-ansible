@@ -4,13 +4,13 @@ Spinnaker
 An ansible role for installing and configuring [Spinnaker](http://spinnaker.io).
 
 [![Travis Build](https://travis-ci.org/AMeng/spinnaker-ansible.svg?branch=master)](https://travis-ci.org/AMeng/spinnaker-ansible)
-[![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-spinnaker-blue.svg)](https://galaxy.ansible.com/AMeng/spinnaker/)
+[![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-spinnaker--ansible-blue.svg)](https://galaxy.ansible.com/AMeng/spinnaker-ansible/)
 
 Installation
 ------------
 
 ```
-ansible-galaxy install AMeng.spinnaker
+ansible-galaxy install AMeng.spinnaker-ansible
 ```
 
 Role Variables
