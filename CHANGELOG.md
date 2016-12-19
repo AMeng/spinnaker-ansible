@@ -1,4 +1,4 @@
-v1.4.0 (08 February 2016)
+v1.4.0 (19 December 2016)
 ------------------------
  * Drop support for Ansible 1.9
  * Add support for Ansible 2.1
