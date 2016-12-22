@@ -29,7 +29,7 @@ Role Variables
    locally?
  * `spinnaker_cassandra_version`: String. Defaults to "2.1.11"
  * `spinnaker_redis_local`: Boolean. Defaults to true. Will redis run locally?
- * `spinnaker_packer_version`: String. Defaults to "0.8.6"
+ * `spinnaker_packer_version`: String. Defaults to "0.12.1"
 
 **Configuration:**
 
