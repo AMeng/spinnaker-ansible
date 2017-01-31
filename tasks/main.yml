@@ -11,6 +11,9 @@
 - include: install/packer.yml
   when: spinnaker_install
 
+- include: install/apache.yml
+  when: spinnaker_install
+
 - include: install/spinnaker.yml
   when: spinnaker_install
 
